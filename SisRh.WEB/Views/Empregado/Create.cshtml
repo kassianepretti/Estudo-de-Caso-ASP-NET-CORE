@@ -1,0 +1,59 @@
+﻿@model EmpregadoViewModel
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        <h2>Inserir um novo empregado</h2>
+    </div>
+</div>
+
+<form asp-action="Create" asp-controller="Empregado" asp-antiforgery="true" method="post">
+    <div class="row">
+        <div class="col-md-12 form-group btn-group">
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <a class="btn btn-warning" asp-action="Index" asp-controller="Empregado">Cancelar</a>
+        </div>
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="Nome"></label>
+            <input class="form-control" asp-for="Nome" type="text"/>
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="Email"></label>
+            <input class="form-control" asp-for="Email" type="text" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="TelResidencial"></label>
+            <input class="form-control" asp-for="TelResidencial" type="text" />
+            <span asp-validation-for="TelResidencial" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="TelCelular"></label>
+            <input class="form-control" asp-for="TelCelular" type="text" />
+            <span asp-validation-for="TelCelular" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="DataNasc"></label>
+            <input class="form-control" asp-for="DataNasc" type="text" placeholder="dd/mm/aaaa" />
+            <span asp-validation-for="DataNasc" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="CodSetor"></label>
+            <select asp-for="CodSetor" asp-items="Model.ListaSetores" class="form-control"></select>
+            <span asp-validation-for="CodSetor" class="text-danger"></span>
+        </div>
+    </div>
+
+</form>
+

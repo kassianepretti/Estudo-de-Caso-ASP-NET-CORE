@@ -1,0 +1,29 @@
+﻿@model SetorViewModel
+
+<div class="row">
+    <div class="col-md-12 form-group">
+        <h2>Deseja deletar este item?</h2>
+    </div>
+</div>
+
+<form method="post" asp-action="Delete" asp-antiforgery="true" asp-controller="Setor">
+    <div class="row">
+        <div class="col-md-12 form-group btn-group">
+            <button type="submit" class="btn btn-primary">Confirmar Exclusão</button>
+            <a asp-controller="Setor" asp-action="Index" class="btn btn-warning">Cancelar</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1 form-group">
+            <label asp-for="Codigo"></label> @Model.Codigo
+        </div>
+        <div class="col-md-5 form-group">
+            <label asp-for="Nome"></label> @Model.Nome
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="Sigla"></label> @Model.Sigla
+        </div>
+    </div>
+</form>
+
