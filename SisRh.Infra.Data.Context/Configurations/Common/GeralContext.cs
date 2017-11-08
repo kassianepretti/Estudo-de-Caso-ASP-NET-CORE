@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SisRh.Infra.Data.Context.Configurations
+namespace SisRh.Infra.Data.Context.Configurations.Common
 {
     public static class GeralContext
     {

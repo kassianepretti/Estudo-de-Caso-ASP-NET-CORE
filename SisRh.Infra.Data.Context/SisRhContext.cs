@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SisRh.Domain.Entities;
-using SisRh.Infra.Data.Context.Configurations;
+using SisRh.Infra.Data.Context.Configurations.Common;
 
 namespace SisRh.Infra.Data.Context
 {
