@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace SisRh.Domain.Base.Interfaces.Services
+namespace SisRh.Domain.Core.Interfaces.Repositories
 {
-    public interface IServiceBase<TEntity> where TEntity : class
+    public interface IRepositoryBase<TEntity> where TEntity : class
     {
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();

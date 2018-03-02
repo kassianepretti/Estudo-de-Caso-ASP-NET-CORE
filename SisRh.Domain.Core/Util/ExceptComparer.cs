@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SisRh.Domain.Base.Util
+namespace SisRh.Domain.Core.Util
 {
     public static class ExceptComparer
     {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRh.WEB", "SisRh.WEB\SisRh.WEB.csproj", "{0DD1D912-F05C-4232-AAEA-B6DB8647EDD9}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{F7E5E5CE-B155-41C1-9DC2-BF124D99AB15}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRh.Domain", "SisRh.Domain\SisRh.Domain.csproj", "{CD0D2BB3-74F8-4326-B6F0-487F779CFEFC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E21C1B62-D819-4069-950A-CE854FCF87E0} = {E21C1B62-D819-4069-950A-CE854FCF87E0}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRh.Infra.CrossCutting.IoC", "SisRh.Infra.CrossCutting.IoC\SisRh.Infra.CrossCutting.IoC.csproj", "{E17B89D4-C015-427A-BA7A-65FC5E176DD0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -38,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRh.Infra.Data.Repository
 		{CD0D2BB3-74F8-4326-B6F0-487F779CFEFC} = {CD0D2BB3-74F8-4326-B6F0-487F779CFEFC}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SisRh.Domain.Base", "SisRh.Domain.Base\SisRh.Domain.Base.csproj", "{E21C1B62-D819-4069-950A-CE854FCF87E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SisRh.Domain.Core", "SisRh.Domain.Core\SisRh.Domain.Core.csproj", "{E21C1B62-D819-4069-950A-CE854FCF87E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

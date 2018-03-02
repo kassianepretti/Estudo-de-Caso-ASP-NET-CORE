@@ -1,4 +1,4 @@
-﻿using SisRh.Domain.Base.Interfaces.Repositories;
+﻿using SisRh.Domain.Core.Interfaces.Repositories;
 using SisRh.Domain.Entities;
 
 namespace SisRh.Domain.Interfaces.Repositories

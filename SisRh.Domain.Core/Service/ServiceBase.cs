@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using SisRh.Domain.Base.Interfaces.Services;
-using SisRh.Domain.Base.Interfaces.Repositories;
+using SisRh.Domain.Core.Interfaces.Services;
+using SisRh.Domain.Core.Interfaces.Repositories;
 
-namespace SisRh.Domain.Base.Service
+namespace SisRh.Domain.Core.Service
 {
     public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : class
     {

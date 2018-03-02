@@ -1,4 +1,4 @@
-﻿using SisRh.Domain.Base.Service;
+﻿using SisRh.Domain.Core.Service;
 using SisRh.Domain.Entities;
 using SisRh.Domain.Interfaces.Repositories;
 using SisRh.Domain.Interfaces.Services;

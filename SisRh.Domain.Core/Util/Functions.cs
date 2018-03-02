@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text;
 
-namespace SisRh.Domain.Base.Util
+namespace SisRh.Domain.Core.Util
 {
     public static class Functions
     {

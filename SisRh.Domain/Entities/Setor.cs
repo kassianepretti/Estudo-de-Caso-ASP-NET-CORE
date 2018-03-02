@@ -1,4 +1,4 @@
-﻿using SisRh.Domain.Base.Entities;
+﻿using SisRh.Domain.Core.Entities;
 using System.Collections.Generic;
 
 namespace SisRh.Domain.Entities

@@ -1,4 +1,4 @@
-﻿namespace SisRh.Domain.Base.Entities
+﻿namespace SisRh.Domain.Core.Entities
 {
     public abstract class Entity
     {

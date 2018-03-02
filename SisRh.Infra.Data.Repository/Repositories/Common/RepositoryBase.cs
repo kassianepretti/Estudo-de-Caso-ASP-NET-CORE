@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SisRh.Domain.Base.Interfaces.Repositories;
+using SisRh.Domain.Core.Interfaces.Repositories;
 using SisRh.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
