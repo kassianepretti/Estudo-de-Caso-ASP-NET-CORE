@@ -8,6 +8,7 @@ Projeto para estudo das seguintes tecnologias, padrões e conceitos:
   <li>.NET Core Native DI;</li>
   <li>AutoMapper;</li>
   <li>FluentValidator;</li>
+  <li>View Components;</li>
   <li>Code First;</li>
   <li>SOLID.</li>
 </ul>
