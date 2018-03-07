@@ -11,5 +11,13 @@ namespace SisRh.WEB.Models.Util
         {
             _mapper = mapper; 
         }
+
+        public string Sucesso
+        {
+            set
+            {
+                TempData["Sucesso"] = value;
+            }
+        }
     } 
 }

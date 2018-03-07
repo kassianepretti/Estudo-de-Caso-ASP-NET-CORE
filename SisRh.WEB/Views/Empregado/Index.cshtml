@@ -5,11 +5,10 @@
         <h2>Lista de Empregados</h2>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-12 form-group">
-        <a class="btn btn-primary" asp-controller="Empregado" asp-action="Create">Novo</a>
-    </div>
-</div>
+
+<vc:botao-default controller-name="Empregado" tipo-tela="Listar"></vc:botao-default>
+<vc:summary />
+
 <div class="row">
     <div class="col-md-12 form-group table-responsive">
         <table class="table table-bordered table-hover">
@@ -64,7 +63,7 @@
                         @item.Setor.Nome
                     </td>
                     <td>
-                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Codigo">Editar</a>
+                        <a class="btn btn-primary" asp-action="Edit"  asp-route-id="@item.Codigo">Editar</a>
                         <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Codigo">Excluir</a>
                     </td>
                 </tr>

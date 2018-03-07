@@ -1,0 +1,29 @@
+﻿@model SisRh.WEB.Models.Util.Components.BotaoDefault
+
+<div class="row">
+    <div class="col-md-12 form-group btn-group">
+        
+        @switch (Model.TipoTela)
+        {
+            case SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Deletar:
+                <button type="submit" class="btn btn-primary">Confirmar Exclusão</button>
+                break;
+            case SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Detalhar:
+                break;
+            case SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Criar:
+            case SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Editar:
+                <button class="btn btn-primary" type="submit">Salvar</button>
+                    break;
+                case SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Listar:
+                <a class="btn btn-primary" asp-controller="@Model.ControllerName" asp-action="Create">Novo</a>
+                break;
+            default:
+                break;
+        }
+
+        @if (Model.TipoTela != SisRh.WEB.Models.Util.Components.BotaoDefault.TiposTela.Listar)
+        {
+            <a class="btn btn-warning" asp-action="Index" asp-controller="@Model.ControllerName">Cancelar</a>
+        }
+    </div>
+</div>

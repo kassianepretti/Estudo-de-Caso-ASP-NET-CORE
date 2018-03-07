@@ -129,4 +129,13 @@
   <data name="MSG_INFORME_TELEFONE" xml:space="preserve">
     <value>Informe pelo menos um número de telefone.</value>
   </data>
+  <data name="MSG_REGISTRO_ATUALIZADO_SUCESSO" xml:space="preserve">
+    <value>Registro atualizado com sucesso.</value>
+  </data>
+  <data name="MSG_REGISTRO_EXCLUIDO_SUCESSO" xml:space="preserve">
+    <value>Registro excluído com sucesso.</value>
+  </data>
+  <data name="MSG_REGISTRO_INSERIDO_SUCESSO" xml:space="preserve">
+    <value>Registro inserido com sucesso.</value>
+  </data>
 </root>

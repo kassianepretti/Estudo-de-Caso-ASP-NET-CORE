@@ -36,6 +36,8 @@ namespace SisRh.WEB.Controllers
             {
                 _setorService.Add(this._mapper.Map<Setor>(model));
 
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
+
                 return RedirectToAction("Index");
             }
             
@@ -59,6 +61,8 @@ namespace SisRh.WEB.Controllers
             {
                 _setorService.Update(this._mapper.Map<Setor>(model));
 
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
+
                 return RedirectToAction("Index");
             }
 
@@ -79,6 +83,8 @@ namespace SisRh.WEB.Controllers
             if (model != null)
             {
                 _setorService.Remove(model);
+
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_EXCLUIDO_SUCESSO;
 
                 return RedirectToAction("Index");
             }

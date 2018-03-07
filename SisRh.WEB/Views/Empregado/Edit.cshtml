@@ -8,12 +8,9 @@
 
 <form asp-action="Edit" asp-controller="Empregado" asp-antiforgery="true" method="post">
 
-    <div class="row">
-        <div class="col-md-12 form-group btn-group">
-            <button class="btn btn-primary" type="submit">Salvar</button>
-            <a class="btn btn-warning" asp-action="Index" asp-controller="Empregado">Cancelar</a>
-        </div>
-    </div>
+    <vc:botao-default controller-name="Empregado" tipo-tela="Editar"></vc:botao-default>
+
+    <vc:summary />
 
     <div class="row">
         <div class="col-md-6 form-group">

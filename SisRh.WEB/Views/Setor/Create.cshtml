@@ -8,12 +8,8 @@
 
 <form asp-action="Create" asp-controller="Setor" asp-antiforgery="true" method="post">
 
-    <div class="row">
-        <div class="col-md-12 form-group btn-group">
-            <button class="btn btn-primary" type="submit">Salvar</button>
-            <a class="btn btn-warning" asp-action="Index" asp-controller="Empregado">Cancelar</a>
-        </div>
-    </div>
+    <vc:botao-default controller-name="Setor" tipo-tela="Criar"></vc:botao-default>
+    <vc:summary />
 
     <div class="row">
         <div class="col-md-6 form-group">

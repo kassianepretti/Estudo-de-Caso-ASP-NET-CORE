@@ -95,5 +95,32 @@ namespace SisRh.WEB.Resources {
                 return ResourceManager.GetString("MSG_INFORME_TELEFONE", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro atualizado com sucesso..
+        /// </summary>
+        public static string MSG_REGISTRO_ATUALIZADO_SUCESSO {
+            get {
+                return ResourceManager.GetString("MSG_REGISTRO_ATUALIZADO_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro excluído com sucesso..
+        /// </summary>
+        public static string MSG_REGISTRO_EXCLUIDO_SUCESSO {
+            get {
+                return ResourceManager.GetString("MSG_REGISTRO_EXCLUIDO_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro inserido com sucesso..
+        /// </summary>
+        public static string MSG_REGISTRO_INSERIDO_SUCESSO {
+            get {
+                return ResourceManager.GetString("MSG_REGISTRO_INSERIDO_SUCESSO", resourceCulture);
+            }
+        }
     }
 }

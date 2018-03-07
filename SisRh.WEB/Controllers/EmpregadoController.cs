@@ -47,6 +47,8 @@ namespace SisRh.WEB.Controllers
             {
                 _empregadoService.Add(this._mapper.Map<Empregado>(model));
 
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
+
                 return RedirectToAction("Index");
             }
 
@@ -73,6 +75,8 @@ namespace SisRh.WEB.Controllers
             {
                 _empregadoService.Update(this._mapper.Map<Empregado>(model));
 
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
+
                 return RedirectToAction("Index");
             }
 
@@ -95,6 +99,8 @@ namespace SisRh.WEB.Controllers
             if(model != null)
             {
                 _empregadoService.Remove(model);
+
+                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_EXCLUIDO_SUCESSO;
 
                 return RedirectToAction("Index");
             }
