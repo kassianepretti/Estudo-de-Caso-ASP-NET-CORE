@@ -5,6 +5,6 @@ namespace SisRh.Domain.Interfaces.Services
 {
     public interface IEmpregadoService : IServiceBase<Empregado>
     {
-        void ValidarObjeto(Empregado empregado);
+        bool ValidarObjeto(Empregado empregado);
     }
 }

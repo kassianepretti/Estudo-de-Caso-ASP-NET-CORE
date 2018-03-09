@@ -18,14 +18,22 @@ namespace SisRh.Domain.Core.Service
             this._listaMensagensValidacao = new List<MensagemValidation>();
         }
 
-        public bool TemMensagemValidacao()
+        public bool TemMensagemValidacao
         {
-            return this._listaMensagensValidacao.Count != 0;
+            get
+            {
+                return this._listaMensagensValidacao.Count != 0;
+            }
         }
 
         public void AddMensagem(string campo, string mensagem)
         {
             this._listaMensagensValidacao.Add(MensagemValidation.GetObjeto(campo, mensagem));
+        }
+
+        public void AddMensagem(string mensagem)
+        {
+            AddMensagem(null, mensagem);
         }
 
         public List<MensagemValidation> GetListaMensagensValidation()

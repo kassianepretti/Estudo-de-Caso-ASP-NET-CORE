@@ -43,27 +43,31 @@ namespace SisRh.WEB.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(EmpregadoViewModel model)
         {
-            if(ModelState.IsValid)
+            try
             {
                 var domain = this._mapper.Map<Empregado>(model);
 
-                _empregadoService.ValidarObjeto(domain);
-
-                if (!_empregadoService.TemMensagemValidacao())
+                if (ModelState.IsValid && _empregadoService.ValidarObjeto(domain))
                 {
                     _empregadoService.Add(domain);
 
                     this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
 
                     return RedirectToAction("Index");
+
                 }
 
                 Funcoes.MontaMensagemErro(ModelState, _empregadoService.GetListaMensagensValidation());
+
+                DataLoading(model);
+
+                return View(model);
             }
-
-            DataLoading(model);
-
-            return View(model);
+            catch (System.Exception)
+            {
+                DataLoading(model);
+                return View(model);
+            }          
         }
 
         public IActionResult Edit(int id)
@@ -78,20 +82,31 @@ namespace SisRh.WEB.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, EmpregadoViewModel model)
         {
-            model.Codigo = id;
-
-            if(ModelState.IsValid)
+            try
             {
-                _empregadoService.Update(this._mapper.Map<Empregado>(model));
+                model.Codigo = id;
+                var domain = this._mapper.Map<Empregado>(model);
 
-                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
+                if (ModelState.IsValid && _empregadoService.ValidarObjeto(domain))
+                {
+                    _empregadoService.Update(domain);
 
-                return RedirectToAction("Index");
+                    this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
+
+                    return RedirectToAction("Index");
+                }
+
+                Funcoes.MontaMensagemErro(ModelState, _empregadoService.GetListaMensagensValidation());
+
+                DataLoading(model);
+
+                return View(model);
             }
-
-            DataLoading(model);
-
-            return View(model);
+            catch (System.Exception)
+            {
+                DataLoading(model);
+                return View(model);
+            }
         }
 
         public IActionResult Delete(int id)
@@ -103,18 +118,25 @@ namespace SisRh.WEB.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var model = _empregadoService.GetById(id);
-
-            if(model != null)
+            try
             {
-                _empregadoService.Remove(model);
+                var model = _empregadoService.GetById(id);
 
-                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_EXCLUIDO_SUCESSO;
+                if (model != null)
+                {
+                    _empregadoService.Remove(model);
 
-                return RedirectToAction("Index");
+                    this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_EXCLUIDO_SUCESSO;
+
+                    return RedirectToAction("Index");
+                }
+
+                return RedirectToAction("Delete");
             }
-
-            return RedirectToAction("Delete");
+            catch (System.Exception)
+            {
+                return RedirectToAction("Delete");
+            }
         }
     }
 }
