@@ -5,5 +5,6 @@ namespace SisRh.Domain.Interfaces.Repositories
 {
     public interface IEmpregadoRepository : IRepositoryBase<Empregado>
     {
+        bool ExisteCpf(Empregado empregado);
     }
 }

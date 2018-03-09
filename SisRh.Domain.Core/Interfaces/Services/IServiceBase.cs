@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisRh.Domain.Core.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
@@ -27,6 +28,8 @@ namespace SisRh.Domain.Core.Interfaces.Services
         void Remove(int id, string auditKey);
         void RemoveRange(IEnumerable<TEntity> objs);
         void RemoveRange(IEnumerable<TEntity> objs, string auditKey);
+        bool TemMensagemValidacao();
+        List<MensagemValidation> GetListaMensagensValidation();
         void Dispose();
     }
 }

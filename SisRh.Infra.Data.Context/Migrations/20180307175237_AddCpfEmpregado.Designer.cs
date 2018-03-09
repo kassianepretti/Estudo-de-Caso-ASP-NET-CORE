@@ -11,9 +11,10 @@ using System;
 namespace SisRh.Infra.Data.Context.Migrations
 {
     [DbContext(typeof(SisRhContext))]
-    partial class SisRhContextModelSnapshot : ModelSnapshot
+    [Migration("20180307175237_AddCpfEmpregado")]
+    partial class AddCpfEmpregado
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

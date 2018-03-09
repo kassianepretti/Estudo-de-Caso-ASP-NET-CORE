@@ -3,16 +3,34 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using SisRh.Domain.Core.Interfaces.Services;
 using SisRh.Domain.Core.Interfaces.Repositories;
+using SisRh.Domain.Core.Util;
 
 namespace SisRh.Domain.Core.Service
 {
     public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : class
     {
         private readonly IRepositoryBase<TEntity> _repository;
+        private List<MensagemValidation> _listaMensagensValidacao;
 
         public ServiceBase(IRepositoryBase<TEntity> repository)
         {
             _repository = repository;
+            this._listaMensagensValidacao = new List<MensagemValidation>();
+        }
+
+        public bool TemMensagemValidacao()
+        {
+            return this._listaMensagensValidacao.Count != 0;
+        }
+
+        public void AddMensagem(string campo, string mensagem)
+        {
+            this._listaMensagensValidacao.Add(MensagemValidation.GetObjeto(campo, mensagem));
+        }
+
+        public List<MensagemValidation> GetListaMensagensValidation()
+        {
+            return this._listaMensagensValidacao;
         }
 
         public void Add(TEntity obj)

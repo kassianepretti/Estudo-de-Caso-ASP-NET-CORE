@@ -79,6 +79,15 @@ namespace SisRh.WEB.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CPF.
+        /// </summary>
+        public static string LBL_CPF {
+            get {
+                return ResourceManager.GetString("LBL_CPF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de Nascimento.
         /// </summary>
         public static string LBL_DATA_NASC {

@@ -8,6 +8,7 @@ namespace SisRh.WEB.Models.Validation
         public EmpregadoVMValidator()
         {
             ValidationNome();
+            ValidationCpf();
             ValidationEmail();
             ValidationTelResidencial();
             ValidationTelCelular();

@@ -16,6 +16,11 @@ namespace SisRh.Infra.Data.Repository.Repositories
 
         }
 
+        public bool ExisteCpf(Empregado empregado)
+        {
+            return _dt.Empregados.Count(x => !x.VerificaCpfUnico(empregado)) != 0;
+        }
+
         public override IEnumerable<Empregado> GetAll()
         {
             //return from e in _dt.Empregados.Include("Setor").AsNoTracking()

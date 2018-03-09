@@ -45,11 +45,20 @@ namespace SisRh.WEB.Controllers
         {
             if(ModelState.IsValid)
             {
-                _empregadoService.Add(this._mapper.Map<Empregado>(model));
+                var domain = this._mapper.Map<Empregado>(model);
 
-                this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
+                _empregadoService.ValidarObjeto(domain);
 
-                return RedirectToAction("Index");
+                if (!_empregadoService.TemMensagemValidacao())
+                {
+                    _empregadoService.Add(domain);
+
+                    this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
+
+                    return RedirectToAction("Index");
+                }
+
+                Funcoes.MontaMensagemErro(ModelState, _empregadoService.GetListaMensagensValidation());
             }
 
             DataLoading(model);

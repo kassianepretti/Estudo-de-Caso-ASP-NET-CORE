@@ -12,6 +12,13 @@ namespace SisRh.WEB.Models.Validation.Common
                 .Length(1, 256).WithMessage(Resources.MensagemResource.MSG_CAMPO_MAX_LEN);
         }
 
+        protected void ValidationCpf()
+        {
+            RuleFor(empregado => empregado.Cpf)
+                .NotEmpty().WithMessage(Resources.MensagemResource.MSG_CAMPO_OBRIGATORIO)
+                .Length(1, 11).WithMessage(Resources.MensagemResource.MSG_CAMPO_MAX_LEN);
+        }
+
         protected void ValidationEmail()
         {
             RuleFor(empregado => empregado.Email)

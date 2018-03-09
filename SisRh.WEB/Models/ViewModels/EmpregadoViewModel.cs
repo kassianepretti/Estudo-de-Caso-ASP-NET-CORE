@@ -16,6 +16,9 @@ namespace SisRh.WEB.Models.ViewModels
         [Display(ResourceType = typeof(Resources.LabelResource), Name = "LBL_EMAIL")]
         public string Email { get; set; }
 
+        [Display(ResourceType = typeof(Resources.LabelResource), Name = "LBL_CPF")]
+        public string Cpf { get; set; }
+
         [Display(ResourceType = typeof(Resources.LabelResource), Name = "LBL_TEL_RESIDENCIAL")]
         public string TelResidencial { get; set; }
 

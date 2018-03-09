@@ -123,6 +123,9 @@
   <data name="LBL_CODIGO" xml:space="preserve">
     <value>Código</value>
   </data>
+  <data name="LBL_CPF" xml:space="preserve">
+    <value>CPF</value>
+  </data>
   <data name="LBL_DATA_NASC" xml:space="preserve">
     <value>Data de Nascimento</value>
   </data>
