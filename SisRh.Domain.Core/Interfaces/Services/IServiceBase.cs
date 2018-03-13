@@ -29,6 +29,7 @@ namespace SisRh.Domain.Core.Interfaces.Services
         void RemoveRange(IEnumerable<TEntity> objs);
         void RemoveRange(IEnumerable<TEntity> objs, string auditKey);
         List<MensagemValidation> GetListaMensagensValidation();
+        bool OperacaoValida();
         void Dispose();
     }
 }

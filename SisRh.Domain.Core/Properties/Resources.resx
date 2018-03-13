@@ -117,19 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MSG_CAMPO_INVALIDO" xml:space="preserve">
-    <value>Campo inválido.</value>
-  </data>
-  <data name="MSG_CAMPO_MAX_LEN" xml:space="preserve">
-    <value>Campo deve conter até {MaxLength} caracteres.</value>
-  </data>
-  <data name="MSG_CAMPO_OBRIGATORIO" xml:space="preserve">
-    <value>Campo obrigatório.</value>
-  </data>
-  <data name="MSG_CPF_JA_EXISTE" xml:space="preserve">
-    <value>Cpf já existe.</value>
-  </data>
-  <data name="MSG_INFORME_TELEFONE" xml:space="preserve">
-    <value>Informe pelo menos um número de telefone.</value>
+  <data name="MSG_ERROR" xml:space="preserve">
+    <value>[Erro {0}] Ocorreu um erro inesperado. Favor entrar em contato com o administrador do sistema.</value>
   </data>
 </root>

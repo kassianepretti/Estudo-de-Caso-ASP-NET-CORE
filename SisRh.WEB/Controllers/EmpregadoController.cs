@@ -5,6 +5,7 @@ using SisRh.Domain.Entities;
 using SisRh.Domain.Interfaces.Services;
 using SisRh.WEB.Models.Util;
 using SisRh.WEB.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace SisRh.WEB.Controllers
@@ -45,27 +46,24 @@ namespace SisRh.WEB.Controllers
         {
             try
             {
-                var domain = this._mapper.Map<Empregado>(model);
+                DataLoading(model);
 
-                if (ModelState.IsValid && _empregadoService.ValidarObjeto(domain))
+                if (!ModelState.IsValid)
+                    return View(model);
+                
+                _empregadoService.Add(this._mapper.Map<Empregado>(model));
+
+                if (_empregadoService.OperacaoValida())
                 {
-                    _empregadoService.Add(domain);
-
                     this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
-
                     return RedirectToAction("Index");
-
                 }
 
                 Funcoes.MontaMensagemErro(ModelState, _empregadoService.GetListaMensagensValidation());
-
-                DataLoading(model);
-
                 return View(model);
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                DataLoading(model);
                 return View(model);
             }          
         }
@@ -84,27 +82,25 @@ namespace SisRh.WEB.Controllers
         {
             try
             {
+                DataLoading(model);
+
+                if (!ModelState.IsValid)
+                    return View(model);
+
                 model.Codigo = id;
-                var domain = this._mapper.Map<Empregado>(model);
+                _empregadoService.Update(this._mapper.Map<Empregado>(model));
 
-                if (ModelState.IsValid && _empregadoService.ValidarObjeto(domain))
+                if (_empregadoService.OperacaoValida())
                 {
-                    _empregadoService.Update(domain);
-
                     this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
-
                     return RedirectToAction("Index");
                 }
 
                 Funcoes.MontaMensagemErro(ModelState, _empregadoService.GetListaMensagensValidation());
-
-                DataLoading(model);
-
                 return View(model);
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                DataLoading(model);
                 return View(model);
             }
         }
@@ -133,7 +129,7 @@ namespace SisRh.WEB.Controllers
 
                 return RedirectToAction("Delete");
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
                 return RedirectToAction("Delete");
             }

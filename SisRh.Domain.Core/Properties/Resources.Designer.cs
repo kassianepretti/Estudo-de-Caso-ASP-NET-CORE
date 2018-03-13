@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SisRh.Domain.Properties {
+namespace SisRh.Domain.Core.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SisRh.Domain.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SisRh.Domain.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SisRh.Domain.Core.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,47 +61,11 @@ namespace SisRh.Domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Campo inválido..
+        ///   Looks up a localized string similar to [Erro {0}] Ocorreu um erro inesperado. Favor entrar em contato com o administrador do sistema..
         /// </summary>
-        public static string MSG_CAMPO_INVALIDO {
+        public static string MSG_ERROR {
             get {
-                return ResourceManager.GetString("MSG_CAMPO_INVALIDO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Campo deve conter até {MaxLength} caracteres..
-        /// </summary>
-        public static string MSG_CAMPO_MAX_LEN {
-            get {
-                return ResourceManager.GetString("MSG_CAMPO_MAX_LEN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Campo obrigatório..
-        /// </summary>
-        public static string MSG_CAMPO_OBRIGATORIO {
-            get {
-                return ResourceManager.GetString("MSG_CAMPO_OBRIGATORIO", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cpf já existe..
-        /// </summary>
-        public static string MSG_CPF_JA_EXISTE {
-            get {
-                return ResourceManager.GetString("MSG_CPF_JA_EXISTE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Informe pelo menos um número de telefone..
-        /// </summary>
-        public static string MSG_INFORME_TELEFONE {
-            get {
-                return ResourceManager.GetString("MSG_INFORME_TELEFONE", resourceCulture);
+                return ResourceManager.GetString("MSG_ERROR", resourceCulture);
             }
         }
     }

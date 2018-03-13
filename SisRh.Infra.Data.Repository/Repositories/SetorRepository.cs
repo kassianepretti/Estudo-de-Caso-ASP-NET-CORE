@@ -18,7 +18,7 @@ namespace SisRh.Infra.Data.Repository.Repositories
 
         public override IEnumerable<object> GetListToSelect()
         {
-            return this._dt.Setores.ToList().Select(setor => new { Text = setor.Nome, Value = setor.Codigo }).OrderBy(x => x.Text);
+            return this._dt.Setores.ToList().Select(setor => new { Text = setor.SiglaNome, Value = setor.Codigo }).OrderBy(x => x.Text);
         }
 
         public override IEnumerable<Setor> GetAll()

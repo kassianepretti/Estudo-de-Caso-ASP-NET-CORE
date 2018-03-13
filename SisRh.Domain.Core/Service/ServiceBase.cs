@@ -18,12 +18,9 @@ namespace SisRh.Domain.Core.Service
             this._listaMensagensValidacao = new List<MensagemValidation>();
         }
 
-        public bool TemMensagemValidacao
+        public bool OperacaoValida()
         {
-            get
-            {
-                return this._listaMensagensValidacao.Count != 0;
-            }
+            return this._listaMensagensValidacao.Count == 0;
         }
 
         public void AddMensagem(string campo, string mensagem)
@@ -41,7 +38,7 @@ namespace SisRh.Domain.Core.Service
             return this._listaMensagensValidacao;
         }
 
-        public void Add(TEntity obj)
+        public virtual void Add(TEntity obj)
         {
             _repository.Add(obj);
         }
@@ -141,7 +138,7 @@ namespace SisRh.Domain.Core.Service
             _repository.RemoveRange(objs, auditKey);
         }
 
-        public void Update(TEntity obj)
+        public virtual void Update(TEntity obj)
         {
             _repository.Update(obj);
         }

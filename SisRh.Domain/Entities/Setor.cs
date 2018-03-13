@@ -9,5 +9,13 @@ namespace SisRh.Domain.Entities
         public string Sigla { get; set; }
 
         public virtual IEnumerable<Empregado> Empregados { get; set; }
+
+        public string SiglaNome
+        {
+            get
+            {
+                return Sigla + " - " + Nome;
+            }
+        }
     }
 }

@@ -10,17 +10,28 @@ namespace SisRh.Domain.Services
         private readonly IEmpregadoRepository _repository;
 
         public EmpregadoService(IEmpregadoRepository repository)
-            :base(repository)
+            : base(repository)
         {
             _repository = repository;
         }
-        
-        public bool ValidarObjeto(Empregado empregado)
+
+        public override void Add(Empregado obj)
         {
-            if (_repository.ExisteCpf(empregado))
-               this.AddMensagem("Cpf", "Cpf já existe.");
-            
-            return !this.TemMensagemValidacao;
+            if (_repository.ExisteCpf(obj))
+                this.AddMensagem("Cpf", Properties.Resources.MSG_CPF_JA_EXISTE);
+
+            if (OperacaoValida())
+                base.Add(obj);
         }
+
+        public override void Update(Empregado obj)
+        {
+            if (_repository.ExisteCpf(obj))
+                this.AddMensagem("Cpf", Properties.Resources.MSG_CPF_JA_EXISTE);
+
+            if (OperacaoValida())
+                base.Update(obj);
+        }
+
     }
 }

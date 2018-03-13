@@ -30,14 +30,16 @@ namespace SisRh.WEB.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(EmpregadoViewModel model)
+        public IActionResult Create(SetorViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(model);
+
+            _setorService.Add(this._mapper.Map<Setor>(model));
+
+            if (_setorService.OperacaoValida())
             {
-                _setorService.Add(this._mapper.Map<Setor>(model));
-
                 this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_INSERIDO_SUCESSO;
-
                 return RedirectToAction("Index");
             }
             
@@ -53,16 +55,17 @@ namespace SisRh.WEB.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, EmpregadoViewModel model)
+        public IActionResult Edit(int id, SetorViewModel model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
             model.Codigo = id;
+            _setorService.Update(this._mapper.Map<Setor>(model));
 
-            if (ModelState.IsValid)
+            if (_setorService.OperacaoValida())
             {
-                _setorService.Update(this._mapper.Map<Setor>(model));
-
                 this.Sucesso = Resources.MensagemResource.MSG_REGISTRO_ATUALIZADO_SUCESSO;
-
                 return RedirectToAction("Index");
             }
 
@@ -71,7 +74,7 @@ namespace SisRh.WEB.Controllers
 
         public IActionResult Delete(int id)
         {
-            return View(this._mapper.Map<EmpregadoViewModel>(_setorService.GetById(id)));
+            return View(this._mapper.Map<SetorViewModel>(_setorService.GetById(id)));
         }
 
         [HttpPost, ActionName("Delete")]
